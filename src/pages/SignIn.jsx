@@ -28,6 +28,7 @@ export default function SignIn() {
     }
   }, []);
   const handleSubmit = async (event) => {
+    event.preventDefault();
     const data = new FormData(event.currentTarget);
     const payload = {
       email: data.get("email"),
