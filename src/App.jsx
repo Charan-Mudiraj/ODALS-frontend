@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 import { lazy, Suspense } from "react";
 const SignUp = lazy(() => import("./pages/SignUp"));
-const SignIn = lazy(() => import("./pages/SignIn.Jsx"));
+const SignIn = lazy(() => import("./pages/SignIn"));
 const Home = lazy(() => import("./pages/Home"));
 const Profile = lazy(() => import("./pages/Profile"));
 const Exam = lazy(() => import("./pages/Exam"));
