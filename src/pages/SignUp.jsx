@@ -13,10 +13,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { Warning, Success } from "../components/Alerts";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [isWarningAlertOpen, setIsWarningAlertOpen] = useState(false);
   const [isSuccessAlertOpen, setIsSuccessAlertOpen] = useState(false);
   const [error, setError] = useState({});
@@ -164,7 +166,9 @@ export default function SignUp() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={handleSubmit}
+                onClick={(e) => {
+                  handleSubmit(e);
+                }}
               >
                 Sign Up
               </Button>
