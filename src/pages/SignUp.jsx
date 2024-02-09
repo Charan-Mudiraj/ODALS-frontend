@@ -164,12 +164,18 @@ export default function SignUp() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={handleSubmit}
               >
                 Sign Up
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="/signin" variant="body2">
+                  <Link
+                    onClick={() => {
+                      navigate("/signin");
+                    }}
+                    variant="body2"
+                  >
                     Already have an account? Sign in
                   </Link>
                 </Grid>

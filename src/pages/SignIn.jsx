@@ -118,13 +118,19 @@ export default function SignIn() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={handleSubmit}
               >
                 Sign In
               </Button>
               <Grid container>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link
+                    variant="body2"
+                    onClick={() => {
+                      navigate("/signup");
+                    }}
+                  >
+                    Don't have an account? Sign Up
                   </Link>
                 </Grid>
               </Grid>
