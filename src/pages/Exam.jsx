@@ -27,7 +27,7 @@ import img9 from "../assets/questions/9.png";
 import img10 from "../assets/questions/10.png";
 import axios from "axios";
 import AppBar from "../components/AppBar";
-
+const backendURL = "https://odals-backend.onrender.com";
 function Question({
   question,
   questionNo,

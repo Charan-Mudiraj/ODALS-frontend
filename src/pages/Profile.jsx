@@ -7,7 +7,7 @@ import "./styles/profile.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Warning, Success } from "../components/Alerts";
-
+const backendURL = "https://odals-backend.onrender.com";
 export default function Profile() {
   const [isUpdating, setUpdating] = useState(false);
   const [isChangingPwd, setChangingPwd] = useState(false);

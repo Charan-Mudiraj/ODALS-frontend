@@ -6,7 +6,7 @@ import axios from "axios";
 import AppBar from "../components/AppBar";
 import ScoreCard from "../components/ScoreCard";
 import { useNavigate } from "react-router-dom";
-
+const backendURL = "https://odals-backend.onrender.com";
 export default function Results() {
   const [score, setScore] = useState(-1);
   const submittedAnswers = useRecoilValue(optionsSelected);

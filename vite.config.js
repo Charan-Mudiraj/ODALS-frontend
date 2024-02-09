@@ -5,7 +5,9 @@ dotenv.config();
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  define: {
-    backendURL: JSON.stringify("https://odals-backend.onrender.com"),
-  },
+  // define: {
+  //   backendURL: JSON.stringify(
+  //     process.env.BACKEND_URL || "http://localhost:8001"
+  //   ),
+  // },
 });

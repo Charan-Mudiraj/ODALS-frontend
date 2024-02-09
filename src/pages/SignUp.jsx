@@ -14,7 +14,7 @@ import axios from "axios";
 import { Warning, Success } from "../components/Alerts";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const backendURL = "https://odals-backend.onrender.com";
 const defaultTheme = createTheme();
 
 export default function SignUp() {
