@@ -29,7 +29,6 @@ export default function SignIn() {
   }, []);
   const handleSubmit = async (event) => {
     const data = new FormData(event.currentTarget);
-    alert(data);
     const payload = {
       email: data.get("email"),
       password: data.get("password"),
@@ -118,9 +117,6 @@ export default function SignIn() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={(e) => {
-                  handleSubmit(e);
-                }}
               >
                 Sign In
               </Button>
