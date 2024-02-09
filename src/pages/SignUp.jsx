@@ -32,6 +32,7 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    alert(data);
     const payload = {
       name: data.get("name").trim(" "),
       address: data.get("address").trim(" "),
