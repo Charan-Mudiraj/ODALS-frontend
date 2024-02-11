@@ -73,6 +73,14 @@
 
 ![alt text](./views/11.png)
 
+### License Card (PNG)
+
+![alt text](./views/11-1.png)
+
+### Unauthorized Access Page (Tracking User Login and Logout Sessions by using Browser's Local Storage)
+
+![alt text](./views/11-2.png)
+
 ### User Schema on DB
 
 ![alt text](./views/12.png)
