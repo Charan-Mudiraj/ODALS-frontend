@@ -13,12 +13,12 @@ const Results = lazy(() => import("./pages/Results"));
 const License = lazy(() => import("./pages/License"));
 import CircularProgress from "@mui/joy/CircularProgress";
 import axios from "axios";
-const backendURL = "https://odals-backend.onrender.com";
+
 function Root() {
   const navigate = useNavigate();
   useEffect(() => {
     // Start the server and do not wait for res
-    axios.get(`${backendURL}`);
+    axios.get(`${backendURL}/`);
 
     const userID = window.localStorage.getItem("userID");
     if (userID) {
