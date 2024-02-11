@@ -14,13 +14,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Warning } from "../components/Alerts";
 import { useState } from "react";
-const backendURL = "https://odals-backend.onrender.com";
+import { Loader } from "../App";
+
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
   const [isWarningAlertOpen, setIsWarningAlertOpen] = useState(false);
   const [error, setError] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   React.useEffect(() => {
     const userID = window.localStorage.getItem("userID");
     if (userID) {
@@ -34,9 +36,11 @@ export default function SignIn() {
       email: data.get("email"),
       password: data.get("password"),
     };
+    setIsLoading(true);
     const res = await axios.post(`${backendURL}/user/signin`, {
       data: payload,
     });
+    setIsLoading(false);
     const status = res.data.status;
     const message = res.data.message;
     if (status == "ok") {
@@ -48,7 +52,9 @@ export default function SignIn() {
       setIsWarningAlertOpen(true);
     }
   };
-
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <>
       <div
