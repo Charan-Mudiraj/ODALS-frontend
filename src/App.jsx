@@ -18,7 +18,7 @@ function Root() {
   const navigate = useNavigate();
   useEffect(() => {
     // Start the server and do not wait for res
-    axios.get(`${backendURL}/`);
+    axios.get(`${backendURL}`);
 
     const userID = window.localStorage.getItem("userID");
     if (userID) {

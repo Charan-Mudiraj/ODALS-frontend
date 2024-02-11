@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { Warning } from "../components/Alerts";
 import { useState } from "react";
 import { Loader } from "../App";
+const backend = process.env.BACKEND_URL;
 
 const defaultTheme = createTheme();
 
@@ -37,7 +38,7 @@ export default function SignIn() {
       password: data.get("password"),
     };
     setIsLoading(true);
-    const res = await axios.post(`${backendURL}/user/signin`, {
+    const res = await axios.post(`${backend}/user/signin`, {
       data: payload,
     });
     setIsLoading(false);
