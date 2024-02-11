@@ -6,8 +6,6 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   define: {
-    backendURL: JSON.stringify(
-      process.env.BACKEND_URL || "http://localhost:8001"
-    ),
+    backendURL: process.env.BACKEND_URL || "http://localhost:8001",
   },
 });
