@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const backendURL = "https://odals-backend.onrender.com";
 
 const pages = [
   {

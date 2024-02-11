@@ -8,6 +8,7 @@ import axios from "axios";
 import { Typography } from "@mui/material";
 import barCodeImg from "../assets/barcode.png";
 import { Warning } from "../components/Alerts";
+const backendURL = "https://odals-backend.onrender.com";
 
 function ImageGeneratingTemplate({ Component }) {
   const imageRef = useRef(null);

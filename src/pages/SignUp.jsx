@@ -15,6 +15,7 @@ import { Warning, Success } from "../components/Alerts";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "../App";
+const backendURL = "https://odals-backend.onrender.com";
 
 const defaultTheme = createTheme();
 

@@ -15,9 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { Warning } from "../components/Alerts";
 import { useState } from "react";
 import { Loader } from "../App";
-import dotenv from "dotenv";
-dotenv.config();
-const backendURL = process.env.BACKEND_URL;
+const backendURL = "https://odals-backend.onrender.com";
 
 const defaultTheme = createTheme();
 

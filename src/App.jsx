@@ -13,7 +13,7 @@ const Results = lazy(() => import("./pages/Results"));
 const License = lazy(() => import("./pages/License"));
 import CircularProgress from "@mui/joy/CircularProgress";
 import axios from "axios";
-const backendURL = process.env.BACKEND_URL;
+const backendURL = "https://odals-backend.onrender.com";
 function Root() {
   const navigate = useNavigate();
   useEffect(() => {
