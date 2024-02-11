@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { Warning } from "../components/Alerts";
 import { useState } from "react";
 import { Loader } from "../App";
+const backendURL = process.env.BACKEND_URL;
 
 const defaultTheme = createTheme();
 
