@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import { Warning } from "../components/Alerts";
 import { useState } from "react";
 import { Loader } from "../App";
+import { useRecoilValue } from "recoil";
+import { isBackendUpAtom } from "../atoms/other";
 
 const defaultTheme = createTheme();
 
@@ -23,6 +25,7 @@ export default function SignIn() {
   const [isWarningAlertOpen, setIsWarningAlertOpen] = useState(false);
   const [error, setError] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const isBackendUp = useRecoilValue(isBackendUpAtom);
   React.useEffect(() => {
     const userID = window.localStorage.getItem("userID");
     if (userID) {
@@ -53,7 +56,26 @@ export default function SignIn() {
     }
   };
   if (isLoading) {
-    return <Loader />;
+    return (
+      <>
+        <Loader />
+        {!isBackendUp && (
+          <p
+            style={{
+              position: "absolute",
+              top: "2%",
+              fontWeight: "bold",
+              fontFamily: "sans-serif",
+              color: "gray",
+              left: "38%",
+              fontSize: "20px",
+            }}
+          >
+            Backend hasn't started yet. Please wait.
+          </p>
+        )}
+      </>
+    );
   }
   return (
     <>

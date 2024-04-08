@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, useSetRecoilState } from "recoil";
 import { lazy, Suspense } from "react";
 const SignUp = lazy(() => import("./pages/SignUp"));
 const SignIn = lazy(() => import("./pages/SignIn"));
@@ -13,13 +13,16 @@ const Results = lazy(() => import("./pages/Results"));
 const License = lazy(() => import("./pages/License"));
 import CircularProgress from "@mui/joy/CircularProgress";
 import axios from "axios";
+import { isBackendUpAtom } from "./atoms/other";
 
 function Root() {
   const navigate = useNavigate();
+  const setIsUp = useSetRecoilState(isBackendUpAtom);
   useEffect(() => {
     // Start the server and do not wait for res
-    axios.get(`${backendURL}/`);
-
+    axios.get(`${backendURL}/`).then((res) => {
+      res.status == 200 && setIsUp(true);
+    });
     const userID = window.localStorage.getItem("userID");
     if (userID) {
       navigate("/home");
